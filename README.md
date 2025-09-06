@@ -241,9 +241,4 @@ Generated Responses:
 * **Weaknesses:** More resource-intensive.
 * **Overall:** Best for **policy or critical queries**.
 
----
-
-<img width="552" height="738" alt="image" src="https://github.com/user-attachments/assets/b90ec240-3158-42fb-8c21-fe0f0728666d" />  
-
-<img width="895" height="605" alt="image" src="https://github.com/user-attachments/assets/119c4b6a-ebd7-496c-a634-b659884c83ab" />  
 
