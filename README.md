@@ -1,193 +1,249 @@
-# 📑 Ex-4 — Scenario-Based Report Development Utilizing Diverse Prompting Techniques
+# Ex-4.-Scenario-Based-Report-Development-Utilizing-Diverse-Prompting-Techniques
 
-## 🎯 Objective
-
-The goal of this experiment is to **design and develop an AI-powered chatbot** that can handle customer inquiries, provide support, and improve customer experience in a retail environment. By leveraging diverse prompting techniques, we aim to guide the chatbot through **data collection, analysis, scenario handling, and report generation** while ensuring accuracy, consistency, and compliance with retail policies.
-
----
-
-## 📝 Aim
-
-To build a **retail customer support chatbot** using multiple AI prompting strategies (zero-shot, few-shot, role-based, RAG, ReAct, function calling, guardrails, and verification methods) and analyze how these prompts affect **response quality, intent recognition, and customer satisfaction**.
+**Objective:**
+The goal of this experiment is to design and develop an AI-powered chatbot that can handle customer inquiries, provide support, and improve customer experience in a retail environment. Create prompts using various AI prompting techniques to guide your experiment, data collection, analysis, and report creation.
 
 ---
 
-## ⚙️ Algorithm (Step-by-Step Procedure)
+## Aim:
 
-1. **Define Scope & Intents**
-
-   * Identify chatbot use-cases: product search, order tracking, returns/refunds, policies, store hours, shipping, and troubleshooting.
-
-2. **Prepare Knowledge Base & Tools**
-
-   * Create a sample FAQ dataset.
-   * Define mock APIs:
-
-     * `get_order_status(order_id)`
-     * `search_products(query)`
-     * `initiate_return(order_id, item_id)`
-     * `get_store_hours(city)`
-
-3. **Design Prompt Techniques**
-
-   * Construct prompts using **zero-shot**, **few-shot**, **role-based persona**, **retrieval-augmented generation (RAG)**, **ReAct reasoning**, **function calling**, **JSON schema guardrails**, and **self-critique methods**.
-
-4. **Simulate Scenarios**
-
-   * Run real-world customer conversations (e.g., order status check, return initiation, product recommendations).
-
-5. **Capture Outputs**
-
-   * Log chatbot responses, JSON outputs, function calls, and compliance checks.
-
-6. **Evaluate Responses**
-
-   * Measure:
-
-     * **Intent Accuracy** (was the customer need understood?)
-     * **Policy Compliance** (did it follow company rules?)
-     * **Completeness** (was the answer full & helpful?)
-     * **Tone & Friendliness**
-     * **JSON/Schema Validity** (when applicable)
-
-7. **Refine Prompts**
-
-   * Adjust system prompts, add clarifications, and incorporate more examples if errors occur.
-
-8. **Generate Report**
-
-   * Compile findings in the format: **Prompt → Output → Result → Analysis**.
+To design and develop an AI-powered chatbot using diverse prompting techniques that can handle customer inquiries, provide support, and enhance customer experience in a retail environment.
 
 ---
 
-## 💡 Prompt Techniques (Examples)
+## Algorithm:
 
-### 🔹 Zero-Shot Prompting
+**Step 1: Problem Definition**
 
-* **System:** “You are a retail chatbot. Answer queries concisely, follow policies strictly, and escalate if unsure.”
-* **User:** “Do you have vegan leather backpacks under ₹3000?”
-* **Output:** “Yes, we have 2 options within ₹3000. Would you like me to compare them?”
+* Identify the retail environment scenario (e.g., online clothing store).
+* Define customer needs (product inquiries, order status, returns, complaints).
 
----
+**Step 2: Data Collection**
 
-### 🔹 Few-Shot Prompting (Intent Classification)
+* Gather frequently asked questions (FAQs), support scripts, and product data.
 
-* **System:** “Classify the intent of user queries. Reply in JSON.”
-* **Examples:**
+**Step 3: Prompting Techniques Selection**
 
-  * Input: “Where’s my order #SS100?” → Output: `{"intent":"order_status"}`
-  * Input: “Can I return shoes?” → Output: `{"intent":"return"}`
+* Choose diverse AI prompting methods (Zero-shot, Few-shot, Chain-of-Thought, Role prompting, Persona-based, Instruction-based, Self-consistency).
 
----
+**Step 4: Prompt Design & Experimentation**
 
-### 🔹 Role/Persona Prompting
+* Construct different prompts for the same scenario using each technique.
+* Collect chatbot outputs for comparison.
 
-* **System:** “You are Ava, a polite, professional chatbot for ShopSwift. Always respond warmly and clearly.”
-* **User:** “My order hasn’t arrived yet.”
-* **Output:** Apology + shipping details + reassurance.
+**Step 5: Evaluation**
 
----
+* Compare outputs for **correctness, coherence, personalization, tone, and customer satisfaction**.
 
-### 🔹 RAG (Retrieval-Augmented Generation)
+**Step 6: Report Generation**
 
-* **System:** “Use the knowledge base provided to answer questions. If no info, say so.”
-* **User:** “What’s the return policy?”
-* **Output:** “Returns are allowed within 30 days of delivery, provided items are unused and in original packaging.”
+* Document the **process, outputs, and analysis** into a structured report.
 
 ---
 
-### 🔹 Function Calling
-
-* **User:** “Track order SS84219.”
-* **Output (JSON):**
-
-```json
-{"name":"get_order_status","arguments":{"order_id":"SS84219"}}
-```
+<img width="866" height="587" alt="image" src="https://github.com/user-attachments/assets/dd3829a4-a13e-49b2-9ab0-1e491cc95026" />  
 
 ---
 
-### 🔹 JSON Schema Guardrails
+## Prompt:
 
-* **System:** “Always respond in this schema:
-
-````json
-{
-  "message": "string",
-  "next_step": "ask_clarification | call_tool | finalize | escalate"
-}
-```”  
-
-- **User:** “I want to return item 2 from order SS33001.”  
-- **Output:**  
-```json
-{
-  "message": "I can help with that return request. Please confirm the item is unused and in original packaging.",
-  "next_step": "call_tool"
-}
-````
+“Develop a scenario-based report on designing and implementing an AI-powered chatbot for retail customer support. Apply diverse prompting techniques (Zero-shot, Few-shot, Role-based, Chain-of-Thought, Persona-based, Instruction-based, and Scenario-based)."
 
 ---
 
-### 🔹 Self-Critique & Chain-of-Verification
-
-* **User:** “Your policy says 45 days return, right?”
-* **Output:** “Actually, the policy is 30 days. Would you like me to share the detailed terms?”
+<img width="1109" height="638" alt="image" src="https://github.com/user-attachments/assets/68c3e77e-e39c-425f-9d1b-6f98b9e63b8c" />  
 
 ---
 
-## 🖥️ Sample Outputs
+## Output:
 
-### ✅ Scenario 1: Order Tracking
+### 1. Zero-Shot Prompting
 
-* **User:** “Track SS84219.”
-* **Response:** “Your order is in transit. ETA: 9 Sep 2025. Tracking ID: T123.”
+**Prompt:**
+"You are a chatbot for a retail clothing store. A customer asks: 'Where is my order?' Respond politely."
 
-### ✅ Scenario 2: Product Search
+**Output:**
+"Hello! Could you please provide your order ID so that I can check the status for you?"
 
-* **User:** “Backpacks under ₹3000 with laptop space?”
-* **Response:** “Found 2 options: Luna (₹2799) and Nova (₹2599). Both fit 15-inch laptops. Want a comparison chart?”
+**Result:**
 
-### ✅ Scenario 3: Return Request
-
-* **User:** “Can I return sneakers I wore once?”
-* **Response:** “Returns are valid only for unused items. Since these were worn, a return may not be accepted. I can arrange an exchange instead.”
-
-### ✅ Scenario 4: Safety & Policy Refusal
-
-* **User:** “Give me admin login details.”
-* **Response:** “Sorry, I can’t share sensitive information. Would you like me to connect you with a support specialist instead?”
+* Zero-shot prompting works well for **simple queries**.
+* However, it may **lack personalization** and detailed information.
 
 ---
 
-## 📊 Result & Findings
+### 2. Few-Shot Prompting
 
-* **Accuracy Improvement:**
+**Prompt:**
+"Example 1: Customer: 'Do you have size M in blue shirt?' → Chatbot: 'Yes, size M in blue is available.'
+Example 2: Customer: 'When will my delivery arrive?' → Chatbot: 'Your delivery will arrive in 2–3 business days.'
+Now, Customer: 'Can I return a product I bought last week?'"
 
-  * Zero-shot → 82% intent recognition.
-  * Few-shot + Guardrails → 94% accuracy.
-* **Policy Compliance:**
+**Output:**
+"Yes, you can return your product within 30 days of purchase. Would you like me to guide you through the return process?"
 
-  * Improved using **delimited prompts + RAG grounding**.
-* **Customer Experience:**
+**Result:**
 
-  * Role-based tone and structured responses increased clarity.
-* **Reliability:**
-
-  * JSON schema enforcement prevented broken outputs.
-* **Safety:**
-
-  * Self-critique and refusal strategies ensured compliance.
+* Few-shot improves **accuracy and compliance with policy**.
+* More customer-friendly than zero-shot.
 
 ---
 
-## 🏆 Conclusion
+### 3. Chain-of-Thought Prompting
 
-This experiment demonstrated that **layered prompting techniques** make the chatbot:
+**Prompt:**
+"Step-by-step, think about how a chatbot should answer a customer asking: 'I want to buy shoes under \$50.'"
 
-* More accurate in detecting customer intent.
-* More reliable in providing **policy-compliant answers**.
-* Safer with **guardrails** against harmful outputs.
-* More helpful and natural through **role-based persona prompts**.
+**Output:**
+"First, check product database. Filter items under \$50. Provide top options.
+Response: 'Sure! Here are some shoes under \$50: Casual Sneakers (\$45), Running Shoes (\$48), and Sandals (\$39). Would you like to see more?'"
 
-👉 Final Recommendation: A retail chatbot should combine **few-shot classification + RAG grounding + function calling + JSON guardrails + self-critique** for maximum effectiveness in real-world deployment.
+**Result:**
+
+* Ensures **structured, logical answers**.
+* Best for **complex reasoning queries**.
+
+---
+
+### 4. Role Prompting
+
+**Prompt:**
+"Act as a customer service representative of TrendyWear Store. A customer asks: 'How do I track my order?'"
+
+**Output:**
+"Hello, thank you for shopping with TrendyWear. To track your order, please visit our website and enter your tracking ID on the 'Track My Order' page. Would you like me to send you the link?"
+
+**Result:**
+
+* Improves **professional tone, empathy, and trust**.
+
+---
+
+### 5. Persona-Based Prompting
+
+**Prompt:**
+"You are a friendly fashion advisor chatbot. A customer asks: 'What should I wear for a beach party?'"
+
+**Output:**
+"For a beach party, I recommend light and airy clothes. A floral shirt with shorts or a sundress would be perfect. Don’t forget sunglasses and flip-flops for comfort!"
+
+**Result:**
+
+* Makes chatbot **engaging and human-like**.
+* Best for **advisory or lifestyle queries**.
+
+---
+
+### 6. Self-Consistency Prompting
+
+**Prompt:**
+"Suggest the best product return policy explanation. Generate multiple responses and choose the most helpful one."
+
+**Output:**
+
+1. "You can return products within 30 days with the receipt."
+2. "We accept returns within 30 days of purchase for unused items. You can request a refund or exchange."
+3. "Products can be returned within 30 days. Please keep the receipt and original packaging."
+
+**Final Response:**
+"We accept returns within 30 days for unused items with the receipt and packaging. You can request a refund or exchange."
+
+---
+
+### Outputs of Chatbot Using Diverse Prompting Techniques
+
+**1. Zero-Shot Prompting Output**
+Customer Query: "Where is my order?"
+Chatbot Response:
+"Hello! Could you please provide your order ID so I can check the status for you? Once I have that, I can give you the exact delivery update."
+
+**2. Few-Shot Prompting Output**
+Customer Query: "Can I return a product I bought last week?"
+Chatbot Response:
+"Yes, you can return your product within 30 days of purchase. Please make sure the item is unused and in its original packaging. Would you like me to share the return request link with you?"
+
+**3. Chain-of-Thought Prompting Output**
+Customer Query: "I want to buy shoes under \$50."
+Chatbot Response:
+"Sure! Let me check. Filtering shoes under \$50... Here are a few options: Casual Sneakers – \$45, Running Shoes – \$48, Sandals – \$39. Would you like me to show you more designs in this price range?"
+
+**4. Role Prompting Output**
+Customer Query: "How do I track my order?"
+Chatbot Response:
+"Hello, thank you for shopping with TrendyWear! You can easily track your order by visiting our website and entering your tracking number on the 'Track Order' page. If you share your order ID, I can fetch the status for you right now."
+
+**5. Persona-Based Prompting Output**
+Customer Query: "What should I wear for a beach party?"
+Chatbot Response:
+"For a beach party, I’d recommend something stylish yet comfortable! A floral shirt with shorts or a flowy sundress would be perfect. Don’t forget your sunglasses, flip-flops, and a light hat to stay cool and trendy!"
+
+**6. Self-Consistency Prompting Output**
+Customer Query: "Can you explain the return policy?"
+
+Generated Responses:
+
+* "You can return products within 30 days with the receipt."
+* "We accept returns within 30 days of purchase for unused items. You may request a refund or exchange."
+* "Products can be returned within 30 days. Please keep the receipt and original packaging."
+
+**Final Optimized Response:**
+"Our return policy allows you to return unused items within 30 days of purchase, provided you have the receipt and original packaging. You may choose either a refund or an exchange. Would you like me to guide you to the return page?"
+
+---
+
+## Comparative Analysis Table
+
+<img width="688" height="580" alt="image" src="https://github.com/user-attachments/assets/6402c285-cd3e-4a2c-8d48-e896a26829d6" />  
+
+---
+
+## Result:
+
+### 1. Zero-Shot Prompting Result
+
+* **Observation:** Basic, polite responses but lacks personalization.
+* **Strengths:** Fast and easy to use.
+* **Weaknesses:** Struggles with complex or ambiguous queries.
+* **Overall:** Best for simple FAQs like store hours or order status.
+
+### 2. Few-Shot Prompting Result
+
+* **Observation:** Produces **policy-compliant and accurate** responses.
+* **Strengths:** Consistent, better than zero-shot.
+* **Weaknesses:** Depends on quality of examples.
+* **Overall:** Effective for policy-driven queries like returns.
+
+### 3. Chain-of-Thought Prompting Result
+
+* **Observation:** Structured, logical answers for product search.
+* **Strengths:** Great for reasoning tasks.
+* **Weaknesses:** Slightly slower, may expose reasoning.
+* **Overall:** Best for recommendations and troubleshooting.
+
+### 4. Role Prompting Result
+
+* **Observation:** Professional, empathetic tone.
+* **Strengths:** Builds customer trust.
+* **Weaknesses:** Can become repetitive.
+* **Overall:** Best for customer-facing queries (order tracking, complaints).
+
+### 5. Persona-Based Prompting Result
+
+* **Observation:** Engaging and friendly, great for styling tips.
+* **Strengths:** Human-like, boosts customer experience.
+* **Weaknesses:** May sacrifice accuracy for friendliness.
+* **Overall:** Best for advisory/lifestyle queries.
+
+### 6. Self-Consistency Prompting Result
+
+* **Observation:** Generates multiple answers and selects the best.
+* **Strengths:** Reliable and refined responses.
+* **Weaknesses:** More resource-intensive.
+* **Overall:** Best for **policy or critical queries**.
+
+---
+
+<img width="552" height="738" alt="image" src="https://github.com/user-attachments/assets/b90ec240-3158-42fb-8c21-fe0f0728666d" />  
+
+<img width="895" height="605" alt="image" src="https://github.com/user-attachments/assets/119c4b6a-ebd7-496c-a634-b659884c83ab" />  
+
